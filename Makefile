@@ -28,3 +28,10 @@ server: $(OBJS_SERVER) $(OBJS_SHARED)
 
 client: $(OBJS_CLIENT) $(OBJS_SHARED)
 	$(CXX) $(OBJS_CLIENT) $(OBJS_SHARED) -o client.exe $(LIBS_CLIENT)
+
+clean:
+	rm -rf obj/
+	mkdir obj/
+	mkdir obj/shared
+	mkdir obj/server
+	mkdir obj/client

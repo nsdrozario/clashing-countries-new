@@ -2,12 +2,13 @@
 #define CLASHING_COUNTRIES_UI_HPP
 
 extern "C" {
-    #include <pdcurses.h>
+    #include <ncurses.h>
 }
 
 namespace ClashingCountries {
     namespace ConsoleUI {
         enum Colors {
+            Default,
             PositiveText,
             PositiveButton,
             NegativeText,
