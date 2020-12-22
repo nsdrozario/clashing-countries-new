@@ -27,7 +27,7 @@ int main() {
     if (l.listen(sf::Socket::AnyPort) != sf::Socket::Done) {
         std::cerr << Debug::get_timestamp(&current_time, local_current_time) << " Could not create TcpListener" << std::endl;
     }
-    std::cout << Debug::get_timestamp(&current_time, local_current_time) << " Successfully created TcpListener at port " << l.getLocalPort() << std::endl;
+    std::cout << Debug::get_timestamp(&current_time, local_current_time) << " Successfully created LAN TcpListener on IP " << sf::IpAddress::getLocalAddress() << "at port " << l.getLocalPort() << std::endl;
     int connections = 0;
     sf::TcpSocket clients[5];
     while (connections < 5) {
