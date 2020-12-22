@@ -2,7 +2,7 @@ CXX := g++
 
 INCLUDE := -Iinclude/ -I/mingw64/include/ncurses
 
-LIBS_CLIENT := -lncurses 
+LIBS_CLIENT := -lncurses -lsfml-network -lsfml-system
 LIBS_SERVER := -lsfml-network -lsfml-system
 
 SRCS_CLIENT := $(wildcard client/*.cpp)
