@@ -5,6 +5,8 @@
 #include <sstream>
 #include <SFML/Network.hpp>
 
+#define RESET_CURSOR move(28,2);
+
 using namespace ClashingCountries;
 
 sf::UdpSocket connection;
@@ -25,13 +27,27 @@ void PrettyMain() {
 
     mvwaddch(RuntimeDataUI::CommandConsole, 1, 1, '>');
     
-    move(28, 2); // move to console
+    RESET_CURSOR
 
     wrefresh(RuntimeDataUI::CommandConsole);
     wrefresh(RuntimeDataUI::RenderArea);
     refresh();
 
+    std::string IP = ConsoleUI::getCommand();
+    
+    mvwaddstr(RuntimeDataUI::RenderArea, 12, 45, "Now enter the port.");
+    
+    ConsoleUI::clearConsole();
+    RESET_CURSOR
+
+    wrefresh(RuntimeDataUI::RenderArea);
+    refresh();
+    
+    std::string port = ConsoleUI::getCommand();
+
     getch();
+
+
 }
 
 void RegularMain() {

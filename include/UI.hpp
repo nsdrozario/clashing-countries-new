@@ -5,6 +5,8 @@ extern "C" {
     #include <ncurses.h>
 }
 
+#include <string>
+
 namespace ClashingCountries {
     namespace ConsoleUI {
         enum Colors {
@@ -24,6 +26,8 @@ namespace ClashingCountries {
             static WINDOW *CommandConsole;
         };
         void CustomInit();
+        std::string getCommand();
+        void clearConsole(); 
         void CustomDealloc();
     }
 }

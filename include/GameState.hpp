@@ -1,5 +1,5 @@
-#ifndef CLASHING_COUNTRIES_Player_HPP
-#define CLASHING_COUNTRIES_Player_HPP
+#ifndef CLASHING_COUNTRIES_GAMESTATE_HPP
+#define CLASHING_COUNTRIES_GAMESTATE_HPP
 
 #include "Player.hpp"
 
@@ -10,9 +10,9 @@ namespace ClashingCountries {
     namespace Game {
         class GameState {
         public:
-            
+            static std::vector<Player> players;
         private:
-
+            
         };
     }
 }

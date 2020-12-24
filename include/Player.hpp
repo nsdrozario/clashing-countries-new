@@ -1,5 +1,5 @@
-#ifndef CLASHING_COUNTRIES_Player_HPP
-#define CLASHING_COUNTRIES_Player_HPP
+#ifndef CLASHING_COUNTRIES_PLAYER_HPP
+#define CLASHING_COUNTRIES_PLAYER_HPP
 
 #include <vector>
 #include <string>
