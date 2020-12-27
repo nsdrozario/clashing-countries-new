@@ -24,10 +24,10 @@ obj/shared/%.o: shared/%.cpp
 	$(CXX) $(INCLUDE) $^ -c -o $@ -std=c++17
 
 server: $(OBJS_SERVER) $(OBJS_SHARED)
-	$(CXX) $(OBJS_SERVER) $(OBJS_SHARED) -o server.exe $(LIBS_SERVER)
+	$(CXX) $(OBJS_SERVER) $(OBJS_SHARED) -o server $(LIBS_SERVER)
 
 client: $(OBJS_CLIENT) $(OBJS_SHARED)
-	$(CXX) $(OBJS_CLIENT) $(OBJS_SHARED) -o client.exe $(LIBS_CLIENT)
+	$(CXX) $(OBJS_CLIENT) $(OBJS_SHARED) -o client $(LIBS_CLIENT)
 
 clean:
 	rm -rf obj/
