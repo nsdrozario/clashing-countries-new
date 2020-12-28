@@ -4,12 +4,17 @@
 #include <cstdio>
 #include <sstream>
 #include <SFML/Network.hpp>
+#include <ClientState.hpp>
+#include <Signal.hpp>
 
 #define RESET_CURSOR move(28,2);
 
 using namespace ClashingCountries;
 
 sf::UdpSocket connection;
+
+sf::IpAddress server;
+unsigned int serverPort;
 
 void PrettyMain() {
     
@@ -88,6 +93,8 @@ void RegularMain() {
 
         if (responseContents == "ConnectionAccepted") {
             std::cout << "Connection successful!" << std::endl;
+            server = host;
+            hostPort = serverPort;
         }
 
     }
@@ -97,6 +104,10 @@ void RegularMain() {
 }
 
 int main () {
+
+    signal(SIGTERM, clientSigtermHandler);
+    signal(SIGINT, clientSigtermHandler);
+    
     std::string response;
     std::cout << "Use pretty UI mode? [y/n]: ";
     std::cin >> response;

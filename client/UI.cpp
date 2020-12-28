@@ -84,7 +84,7 @@ std::string ConsoleUI::getCommand() {
     }
     cmdbuf[++it] = '\0';
     std::string ret(cmdbuf);
-    delete cmdbuf;
+    delete[] cmdbuf;
     return ret;
 }
 
