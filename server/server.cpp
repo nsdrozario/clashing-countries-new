@@ -81,6 +81,9 @@ int main() {
             sf::Packet response;
             response << msg;
             s.send(response, playerConnections[num_players-1].first, playerConnections[num_players-1].second);
+        } else if (received == "Disconnect") {
+            std::cout << "Disconnecting player from IP " << senderIP.toString() << ", port " << senderPort << std::endl;
+            std::find(std::begin(playerConnections), std::end(playerConnections), std::make_pair(senderIP, senderPort));
         }
 
         
